@@ -15,12 +15,24 @@ const searchHandler = event => {
     });
 };
 
-const filterHandler = () => {
+const filterHandler = (event) => {
     const filter = event.target.dataset.filter ;
+
+    products.forEach((product) => {
+        const category = product.dataset.category;
+        if(filter === "all") {
+            product.style.display = "block";
+        } else {
+            if (filter === category) {
+                product.style.display = "block"
+            } else {
+                product.style.display = "none";
+            }
+        }
+    })
 };
 
 searchInput.addEventListener("keyup", searchHandler);
-
 buttons.forEach((button) => {
     button.addEventListener("click", filterHandler)
 });
