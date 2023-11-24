@@ -45,12 +45,29 @@ const filterHandler = (event) => {
 };
 
 const searchPriceHandler = event => {
-    const searchPrice = event.target.parentElement.children[0].value ;
-}
+    const searchPrice = +event.target.parentElement.children[0].value ;
 
-buttons.forEach((button) => {
-    button.addEventListener("click", filterHandler)
-});
+    products.forEach((product) => {
+        const productPrice = product.children[2].innerText ;
+        const price = +productPrice.split(" ")[1];
 
-searchInput.addEventListener("keyup", searchHandler);
-priceButton.addEventListener("click", searchPriceHandler);
+        if (!searchPrice) {
+            product.style.display = "block";
+        } else {
+            searchPrice === price 
+            ? product.style.display = "block" 
+            : product.style.display = "none" ;
+        };
+    });
+};
+
+const start = () => {
+    buttons.forEach((button) => {
+        button.addEventListener("click", filterHandler)
+    });
+    
+    searchInput.addEventListener("keyup", searchHandler);
+    priceButton.addEventListener("click", searchPriceHandler);
+    }
+    
+window.addEventListener("load", start )
