@@ -1,5 +1,7 @@
 :root {
-
+    --bgColor: #220efa ;
+    --whiteColor: #fff ;
+    --color: #f6f6f7 ;
 }
 
 * {
@@ -10,16 +12,16 @@
 }
 
 body {
-    background-color: #f6f6f7;
+    background-color: var(--color);
     max-width: 1200px;
     margin: auto;
 }
 
 header {
-    background-color: #220efa ;
+    background-color: var(--bgColor) ;
     padding: 20px;
     font-size: 2rem;
-    color: #fff;
+    color: var(--whiteColor);
     margin: 10px 0 50px;
     border-radius: 15px;
 }
@@ -28,16 +30,16 @@ input {
     width: 300px;
     padding: 5px;
     font-size: 1.2rem;
-    color: #220efa;
-    background-color: #f6f6f7;
-    border: #220efa 2ps solid;
+    color: var(--bgColor);
+    background-color: var(--color);
+    border: var(--bgColor) 2ps solid;
     border-radius: 8px;
     margin: 40px 0;
 }
 
 button {
-    background-color: #220efa;
-    color: #fff;
+    background-color: var(--bgColor);
+    color: var(--whiteColor);
     height: 35px;
     width: 100px;
     padding: 5px 10px;
@@ -55,7 +57,7 @@ button {
 }
 
 .product-item {
-    background-color: #fff;
+    background-color: var(--whiteColor);
     width: 320px;
     margin: 30px 0;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -80,8 +82,8 @@ button {
     display: inline-block;
     margin-bottom: 0px;
     margin-top: 15px;
-    background-color: #220efa;
-    color: #fff;
+    background-color: var(--bgColor);
+    color: var(--whiteColor);
     padding: 5px 10px;
     border-radius: 10px;
     font-size: 18px;
